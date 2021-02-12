@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+{#    <link rel="stylesheet" type="text/css" href="{% static 'tracks/main.css' %}">#}
+
+    <title>Hello, world!</title>
+</head>
+<body>
+
+<div class="content-section">
+        {% if request.GET.genre %}
+        <table class="table table-bordered table-striped" style="margin-bottom: 10px; margin-top: 2rem"
+               aria-hidden="true">
+            <tr>
+                <th style="width: 10%">Artist</th>
+                <th style="width: 10%">Track</th>
+                <th style="width: 10%">Date</th>
+                <th style="width: 10%">Album Cover</th>
+                {% for track in tracks %}
+                    <tr>
+                        <td>{{ track.artist }}</td>
+                        <td>{{ track.track }}</td>
+                        <td>{{ track.release_date }}</td>
+                        <td><img src={{ track.album_image_url }} width="60" height="45"></td>
+                    </tr>
+                {% endfor %}
+        </table>
+        {% endif %}
+</div>
+
+</body>
+</html>
