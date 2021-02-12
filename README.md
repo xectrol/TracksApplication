@@ -10,7 +10,7 @@ After downloading the app to your local machine, you can start the application w
 ```bash
 localProjectDirectory\djangoProject\ python manage.py runserver
 ```
-
+Application starts at localhost:8000/tracks
 
 
 ## External Libs
